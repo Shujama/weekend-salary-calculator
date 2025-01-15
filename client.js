@@ -1,12 +1,13 @@
-submitButton() {
-    let fNameInput = document.querySelector('#firstid');
-    let lNameInput = document.querySelector('#lastid');
-    let idInput = document.querySelector('#idid');
-    let titleInput = document.querySelector('#titleid');
-    let salaryInput = document.querySelector('#salaryid');
-    let tableAppend = document.querySelector('#tableid');
+function submitButton() {
+    console.log("Submit button clicked!");
+     let fNameInput = document.querySelector('#firstid').value;
+     let lNameInput = document.querySelector('#lastid').value;
+     let idInput = document.querySelector('#idid').value;
+     let titleInput = document.querySelector('#titleid').value;
+     let salaryInput = document.querySelector('#salaryid').value;
+     let tableAppend = document.querySelector('#tableid');
     
-    tableAppend.innerHTML += 
+    tableAppend.innerHTML += `
       <tr> 
         <td>${fNameInput}</td>
         <td>${lNameInput}</td>
@@ -14,5 +15,5 @@ submitButton() {
         <td>${titleInput}</td>
         <td>${salaryInput}</td>
      </tr>
-   
+   `
    };
