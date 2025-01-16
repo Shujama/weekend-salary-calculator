@@ -1,11 +1,11 @@
 
 totalMonthly = 0;
-let monthlyInput = document.querySelector('#monthlyid');
 //  Formatting salary input to currency
 let usDollar = new Intl.NumberFormat('en-US',{
     style: 'currency',
     currency: 'USD',
 });
+ 
 
 function submitButton() {
     console.log("Submit button clicked!");
@@ -47,8 +47,13 @@ function submitButton() {
     };
 
 
-// function adds the monthly total salary
+// function adds the monthly total salary and changing backgrounf color is more than 20,000
 function addMonthlySalary (){
+    let monthlyInput = document.querySelector('#monthlyid');
+    if (totalMonthly > 20000){
+        monthlyInput.classList.add('red');
+        console.log('Exceeds 20K & added red background ');
+    }
     formMonSal = usDollar.format(totalMonthly)
  monthlyInput.innerHTML =``;
  monthlyInput.innerHTML += `Total monthly: ${formMonSal}`
