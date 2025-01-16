@@ -17,13 +17,21 @@ function submitButton() {
         <td>${idInput}</td>
         <td>${titleInput}</td>
         <td>${salaryInput}</td>
-        <td><button onclick = "">Delete</button></td>
+        <td><button onclick = "deleteButton(event)">Delete</button></td>
      </tr>
    `
     //    clearing the field inputs after submitting
-   fNameInput = '';
-   lNameInput = '';
-   idInput = '';
-   titleInput = '';
-   salaryInput = '';
+    document.querySelector('#firstid').value = '';
+    document.querySelector('#lastid').value = '';
+    document.querySelector('#idid').value = '';
+    document.querySelector('#titleid').value = '';
+    document.querySelector('#salaryid').value = '';
    };
+
+   function deleteButton(event) {
+    let deleteRow = event.target.parentNode.parentNode; //gets the row
+    console.log(deleteRow);  // just to check it is correct
+    
+    deleteRow.remove(); //removes row
+    
+}
