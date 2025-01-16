@@ -1,3 +1,11 @@
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 5001;
+app.use(express.static('public'));
+app.listen(port, () => {
+  console.log(`listening on port: ${port}`);
+});
+
 
 totalMonthly = 0;
 //  Formatting salary input to currency
